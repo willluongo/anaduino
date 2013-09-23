@@ -15,6 +15,7 @@ void setup()
 void loop()
 {
   drawRed(DISPLAY_TIME);
+  drawOrange(DISPLAY_TIME);
   drawYellow(DISPLAY_TIME);
   drawGreen(DISPLAY_TIME);
   drawBlue(DISPLAY_TIME);
@@ -29,11 +30,20 @@ void drawRed(int duration)
   delay(duration);
 }
 
+void drawOrange(int duration)
+{  
+  digitalWrite(RED_PIN, HIGH);
+  analogWrite(GREEN_PIN, 30);
+  analogWrite(BLUE_PIN, 0);
+  
+  delay(duration);
+}
+
+  
 void drawYellow(int duration)
 {
-  // TODO: Not very yellow. :( Let's fix this.
   digitalWrite(RED_PIN, HIGH);
-  digitalWrite(GREEN_PIN, HIGH);
+  analogWrite(GREEN_PIN, 110);
   digitalWrite(BLUE_PIN, LOW);
   
   delay(duration);
@@ -56,4 +66,6 @@ void drawBlue(int duration)
   
   delay(duration);
 }
+
+
 
